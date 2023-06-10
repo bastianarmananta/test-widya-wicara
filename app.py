@@ -152,7 +152,6 @@ if choice == 'Audio Recognition':
     def save_audio_to_wav(audio, file_path):
         sf.write(file_path, audio, sr)
         
-
     # Configuration for audio recording
     sr = 44100
     duration = 5  # Duration in seconds
@@ -202,4 +201,7 @@ if choice == 'About':
     st.title('About')
     st.markdown("---")
     st.header('Knowledge Test PT WIDYA INFORMASI NUSANTARA')
+    st.markdown('This project encompasses two main components: a handwritten digits classifier and an audio recognition system. Both models have been developed utilizing the TensorFlow framework with Deep Neural Network Architecture. In addition, the audio recognition model has been trained using the LSTM-GRU algorithm to enhance its performance. These models demonstrate the ability to classify both numbers and audio data.')
+    st.markdown("It is important to note that while the handwritten digits classifier achieves a commendable 97% accuracy on the test dataset, the audio recognition model's performance is comparatively lower. This discrepancy can be attributed to a limited amount of data available for training the audio recognition model. As a result, the model achieves a modest 52% test accuracy on the audio recognition task.")
+    st.markdown("Efforts are being made to improve the audio recognition model by acquiring and incorporating additional data to enhance its performance. By addressing the data limitations, we aim to further refine the audio recognition system and achieve more accurate results.")
     st.markdown("")
