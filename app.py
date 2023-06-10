@@ -114,10 +114,10 @@ if choice == 'Audio Recognition':
     st.markdown("---")
 
     # Function to handle audio recording
-    def record_audio(duration):
-        audio = sd.rec(int(duration * sr), samplerate=None, channels=1)
-        sd.wait()  # Wait for the recording to complete
-        return audio.flatten()
+    # def record_audio(duration):
+    #     audio = sd.rec(int(duration * sr), samplerate=None, channels=1)
+    #     sd.wait()  # Wait for the recording to complete
+    #     return audio.flatten()
 
     # Set the desired length for reshaping the audio
     target_length = 16000
@@ -148,48 +148,48 @@ if choice == 'Audio Recognition':
 
         return class_label
 
-    # Function to save the recorded audio to a WAV file
-    def save_audio_to_wav(audio, file_path):
-        sf.write(file_path, audio, sr)
+    # # Function to save the recorded audio to a WAV file
+    # def save_audio_to_wav(audio, file_path):
+    #     sf.write(file_path, audio, sr)
         
-    # Configuration for audio recording
-    sr = 44100
-    duration = 5  # Duration in seconds
+    # # Configuration for audio recording
+    # sr = 44100
+    # duration = 5  # Duration in seconds
 
     audio_uploader = st.file_uploader("Upload an audio file", type=["wav", "raw", "mp3"], accept_multiple_files=False)
-    record = st.button('Record', type='primary')
+    # record = st.button('Record', type='primary')
 
-    if record:
-        st.info('Recording started... Please speak into the microphone')
+    # if record:
+    #     st.info('Recording started... Please speak into the microphone')
         
-        audio = record_audio(duration)
-        st.info('Recording completed!')
+    #     audio = record_audio(duration)
+    #     st.info('Recording completed!')
 
-        # Save the recorded audio to a WAV file
-        file_path = 'temp/audio/recorded_audio.wav'  # Specify the file path and name
-        save_audio_to_wav(audio, file_path)
+    #     # Save the recorded audio to a WAV file
+    #     file_path = 'temp/audio/recorded_audio.wav'  # Specify the file path and name
+    #     save_audio_to_wav(audio, file_path)
 
-        # Example code to display the recorded waveform
-        fig, ax = plt.subplots()
-        ax.plot(audio)
-        ax.set_xlabel('Time')
-        ax.set_ylabel('Amplitude')
+    #     # Example code to display the recorded waveform
+    #     fig, ax = plt.subplots()
+    #     ax.plot(audio)
+    #     ax.set_xlabel('Time')
+    #     ax.set_ylabel('Amplitude')
 
-        # Center the image
-        col1, col2, col3 = st.columns(3)
-        col2.write("")  # Create an empty column for center alignment
-        col2.pyplot(fig)
+    #     # Center the image
+    #     col1, col2, col3 = st.columns(3)
+    #     col2.write("")  # Create an empty column for center alignment
+    #     col2.pyplot(fig)
 
-        # Reduce the size of the image
-        fig.set_figwidth(6)  # Adjust the width as needed
-        fig.set_figheight(4)  # Adjust the height as needed
+    #     # Reduce the size of the image
+    #     fig.set_figwidth(6)  # Adjust the width as needed
+    #     fig.set_figheight(4)  # Adjust the height as needed
         
-        # Add a play button to listen to the recorded audio
-        st.audio(file_path)
+    #     # Add a play button to listen to the recorded audio
+    #     st.audio(file_path)
 
-        # Predict the class label of the audio file
-        prediction = predict_audio("temp/audio/recorded_audio.wav")
-        st.info(f'Audio predicted as: {prediction}')
+    #     # Predict the class label of the audio file
+    #     prediction = predict_audio("temp/audio/recorded_audio.wav")
+    #     st.info(f'Audio predicted as: {prediction}')
         
     if audio_uploader:
         
