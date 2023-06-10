@@ -1,5 +1,3 @@
-import sounddevice as sd
-import soundfile as sf
 import streamlit as st
 import matplotlib.pyplot as plt
 import librosa
