@@ -192,7 +192,7 @@ if choice == 'Audio Recognition':
     #     st.info(f'Audio predicted as: {prediction}')
         
     if audio_uploader:
-        
+        st.audio(audio_uploader)
         prediction = predict_audio(audio_uploader)
         st.info(f'Audio predicted as: {prediction}')
 
