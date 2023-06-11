@@ -5,7 +5,7 @@ This project consists of two main components: a Handwritten Detection and an Aud
 ## Installation
 
 1. Create python environment `python -m venv virtualenv`
-2. Clone the repository to virtual environment: `git clone https://github.com/example/repo.git`
+2. Clone the repository to virtual environment: `git clone https://github.com/bastianarmananta/test-widya-wicara.git`
 3. Install the required `pip install -r requirements.txt`
 4. Open a terminal or command prompt and navigate to the project directory.
 5. Run the following command to start the application: `streamlit run app.py`
@@ -14,6 +14,7 @@ This project consists of two main components: a Handwritten Detection and an Aud
 ## Handwritten Detection
 
 The Handwritten Detection project recognizes and interprets handwritten text. It utilizes the MNIST dataset and deep learning algorithms to achieve accurate digit recognition.
+![Handwritten Detection](handwrite-page.png)
 
 To use the Handwritten Detection feature:
 
@@ -26,6 +27,7 @@ To use the Handwritten Detection feature:
 ## Audio Recognition
 
 The Audio Recognition project classifies and analyzes audio data. It is specifically designed to classify audio into two classes: "yes" and "no". The underlying model has been trained using the Speech Commands Dataset.
+![Audio Recognition](audio-recognition-page.png)
 
 To use the Audio Recognition feature:
 
@@ -37,6 +39,8 @@ To use the Audio Recognition feature:
 
 ## About
 
+![About](about-page.png)
+
 The Knowledge Test project showcasing two projects: Handwritten Detection and Audio Recognition. Both projects utilize advanced deep learning algorithms implemented with TensorFlow.
 
 The Handwritten Detection project achieves a commendable 97% accuracy on the test dataset. However, the Audio Recognition model's performance is comparatively lower, with a modest 52% test accuracy. This discrepancy is due to the limited amount of data available for training the audio recognition model.
@@ -46,6 +50,7 @@ Efforts are being made to improve the audio recognition model by acquiring and i
 
 ## Issues
 
+![Error](not-supported.png)
 During the deployment of the project to Streamlit Cloud, an issue was encountered due to the lack of PortAudio support. Streamlit Cloud does not currently provide native support for PortAudio, which is a library required by the project for audio functionality.
 
 As a result, the deployment process was not successful due to the inability to access PortAudio on the Streamlit Cloud platform. This limitation prevents the audio recognition feature of the project from functioning as intended in the deployed version.
